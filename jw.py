@@ -22,12 +22,12 @@ fileHandler = logging.FileHandler(filename, encoding="utf-8")
 fileHandler.setFormatter(logFormatter)
 logger.addHandler(fileHandler)
 
-cameraNumList = [161, 162, 163, 164, 165, 166, 167,
-                 168, 233, 234, 235, 236, 237, 238, 239, 240]
+cameraNumList = [185, 186, 187, 188, 189, 190, 191, 192,
+                 193, 194, 195, 196, 197, 198, 199, 200]
 
 # region csv 파일 읽기
 data = list()
-f = open("C:/Users/KimJiwon/Desktop/list.csv", 'r', encoding='cp949')
+f = open("C:/Users/seo/OneDrive/바탕 화면/AutoEncording_for ewha/01.03(185~200).csv", 'r', encoding='utf-8')
 listInfo = csv.DictReader(f)
 f.close
 
@@ -64,8 +64,8 @@ def SaveCompleted(saveFileName, userName):
     pyautogui.hotkey('alt', 'd')
     pyautogui.sleep(2)
     cameranum = saveFileName[0:3]
-    camerapath = "C:/Users/KimJiwon/Desktop/test/" + userName + "/" + cameranum
-    path = "C:/Users/KimJiwon/Desktop/test/" + userName
+    camerapath = "D:/Ewha Univ/01.03/" + userName + "/" + cameranum
+    path = "D:/Ewha Univ/01.03/" + userName
     pyperclip.copy(camerapath)
     pyautogui.sleep(1)
     pyautogui.hotkey('ctrl', 'v')
@@ -94,7 +94,7 @@ def SaveCompleted(saveFileName, userName):
                 os.mkdir(newpath)
             pyautogui.sleep(1)
             pyautogui.hotkey('alt', 'd')
-            camerapath = "C:/Users/KimJiwon/Desktop/test/" + userName + "/" + cameranum
+            camerapath = "D:/Ewha Univ/01.03/" + userName + "/" + cameranum
             pyperclip.copy(camerapath)
             pyautogui.hotkey('ctrl', 'v')
             pyautogui.sleep(1)
@@ -220,8 +220,8 @@ def saveAuto(dataNum):
     setCamera(dataNum, dataInfolist[dataNum]['Name'])
     if dataInfolist[dataNum]["end"] != "-":
         cameraNumList.clear()
-        cameraNumList.extend([161, 162, 163, 164, 165, 166, 167,
-                              168, 233, 234, 235, 236, 237, 238, 239, 240])
+        cameraNumList.extend([185, 186, 187, 188, 189, 190, 191, 192,
+                                193, 194, 195, 196, 197, 198, 199, 200])
     return True
 
 
